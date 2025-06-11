@@ -45,7 +45,13 @@ const page = () => {
     ];
     setAllBooks(temp);
   };
-
+  
+  type Book = {
+  id: number;
+  image: string;
+  title: string;
+  author: string;
+}; 
   useEffect(() => {
     getData();
   }, []);
@@ -90,9 +96,9 @@ const page = () => {
             {allBooks.map((book) => (
               <div
                 onClick={() => {
-                  router.push(`/book/${book.id}`);
+                  router.push(`/Book/${book.id}`);
                 }}
-                key={book._id}
+                key={book.id}
                 className={styles.bookItem}
               >
                 <img
